@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:olshop_flutter/pages/sign_in_page.dart';
+import 'package:olshop_flutter/pages/sign_up_page.dart';
+import 'package:olshop_flutter/pages/splash_page.dart';
 
 void main() => runApp(const MyApp());
 
@@ -7,22 +10,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Image.asset(
-        'assets/image_splash.png'
-      ),
+      routes: {
+        '/': (context) => const SplashPage(),
+        '/sign-in': (context) => const SignInPage(),
+        '/sign-up': (context) => const SignUpPage(),
+      },
     );
   }
 }
